@@ -1,320 +1,997 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Salman & Sadiya</title>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+html{
+    scroll-behavior:smooth;
+}
 
-<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cinzel:wght@400;600;700&family=Dancing+Script:wght@400;500;600;700&family=Great+Vibes&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+body{
 
-<link rel="stylesheet" href="style.css">
-</head>
+    font-family:'Poppins',sans-serif;
 
-<body>
+    color:white;
 
-<section class="hero">
+    overflow-x:hidden;
+
+    background:#081f18;
+
+}
+.hero{
+
+    position:relative;
+    gap:12px;
+
+    width:100%;
+
+    min-height:100vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:40px 20px;
+
+    overflow:hidden;
+
+}
+
+.hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+    linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
+    url("images/background.png");
+
+    background-size:cover;
+
+    background-position:center center	;
+
+    background-repeat:no-repeat;
+
+    z-index:-2;
+
+}
+
+.hero::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:radial-gradient(circle at center,
+    rgba(255,215,0,.05),
+    transparent 70%);
+
+    z-index:-1;
+
+}
+.hero::before{
+    animation:zoom 20s ease-in-out infinite alternate;
+}
+
+@keyframes zoom{
+
+    from{
+        transform:scale(1);
+    }
+
+    to{
+        transform:scale(1.08);
+    }
+
+}
+.bismillah{
+
+    font-family:'Amiri',serif;
+
+    font-size:clamp(24px,4vw,42px);
+
+    color:#FFD700;
+
+    margin-bottom:25px;
+
+}
+
+.names{
+
+    font-family:'Dancing Script', cursive;
+
+    font-size:clamp(60px,9vw,95px);
+
+    font-weight:700;
+
+    color:#fff;
+
+    line-height:1.1;
+
+    text-shadow:
+        0 0 10px rgba(255,215,0,.4),
+        0 0 30px rgba(255,215,0,.2);
+
+}
+.ampersand{
+
+    font-family:'Great Vibes', cursive;
 
 
-    <h3 class="bismillah fade1">
-        بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ
-    </h3>
+    font-size:70px;
 
-    <h1 class="names fade2">
-        Salmanul Farisi
-    </h1>
+    color:#ffffff;
 
-    <h2 class="ampersand fade3">&</h2>
+    line-height:1;
 
-    <h1 class="names fade4">
-        Sadiya
-    </h1>
+    margin:-10px 0;
 
-    <p class="invite fade5">
-        Together with our families,
-        invite you to celebrate our wedding.
-    </p>
+    text-shadow:
+        0 0 10px rgba(255,215,0,.4),
+        0 0 25px rgba(255,215,0,.25);
 
-    <h3 class="fade6">
-        17 August 2026
-    </h3>
+}
+.invite{
 
-   <a href="#details" class="fade7">
-    <button>
-        View Invitation
-    </button>
-</a>
+    max-width:700px;
 
-</section>
+    margin-top:25px;
 
-<section id="details" class="details">
+    line-height:1.8;
 
-    <h2>Wedding Details</h2>
+    font-size:clamp(16px,2vw,22px);
+
+}
+
+button{
+
+    margin-top:40px;
+
+    padding:16px 40px;
+
+    border:none;
+
+    border-radius:60px;
+
+    background:linear-gradient(135deg,#FFD700,#F6C343);
+
+ 
+   color:#0b3d2e;
 
     
-        <div class="card">
+font-weight:600;
 
-    <h3>🍽 Reception</h3>
+   
+ border-radius:50px;
 
-    <p><strong>Date</strong></p>
-    <p>17 August 2026</p>
+    transition:.35s;
 
+    color:#0b3d2e;
 
-<p><strong>Day</strong></p>
-    <p>Monday</p>    <p><strong>Time</strong></p>
-    <p>11:00 AM to 03:00 PM</p>
+    font-weight:600;
 
-    <p><strong>Venue</strong></p>
-    <p>ZAAD Convention Centre, Anamangad</p>
+    font-size:17px;
 
-</div>
-    </div>
+    cursor:pointer;
 
-</section>
+    transition:.35s;
 
-<section class="verse">
+    box-shadow:0 8px 25px rgba(255,215,0,.3);
 
-    <h2>﷽</h2>
+}
 
-    <h3>وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً</h3>
+button:hover{
 
-    <p class="translation">
-        "And among His signs is that He created for you mates from among yourselves
-        that you may find tranquility in them; and He placed between you affection
-        and mercy."
-    </p>
+    transform:translateY(-4px);
 
-    <p class="reference">
-        — Surah Ar-Rum (30:21)
-    </p>
+    box-shadow:0 15px 35px rgba(255,215,0,.45);
 
-</section>
+}
+/* Start hidden */
+.fade1,
+.fade2,
+.fade3,
+.fade4,
+.fade5,
+.fade6,
+.fade7{
 
-<section class="countdown">
+    opacity:0;
 
-    <h2>Our Big Day</h2>
+    transform:translateY(40px);
 
-    <div class="timer">
+    animation:fadeUp 1s forwards;
 
-        <div class="box">
-            <span id="days">00</span>
-            <p>Days</p>
-        </div>
+}
 
-        <div class="box">
-            <span id="hours">00</span>
-            <p>Hours</p>
-        </div>
+/* Delays */
 
-        <div class="box">
-            <span id="minutes">00</span>
-            <p>Minutes</p>
-        </div>
+.fade1{animation-delay:.5s;}
+.fade2{animation-delay:1.2s;}
+.fade3{animation-delay:1.8s;}
+.fade4{animation-delay:2.2s;}
+.fade5{animation-delay:2.8s;}
+.fade6{animation-delay:3.4s;}
+.fade7{animation-delay:4s;}
 
-        <div class="box">
-            <span id="seconds">00</span>
-            <p>Seconds</p>
-        </div>
 
-    </div>
+/* Animation */
 
-</section>
+@keyframes fadeUp{
 
+    from{
 
-<section class="venue">
+        opacity:0;
 
-    <h2>Venue</h2>
+        transform:translateY(40px);
 
-    <div class="venue-container">
+    }
 
-        <div class="venue-card">
-<img src="images/zaad.jpg" alt="ZAAD Convention Centre" class="venue-image">
-            <h3>🎉 Reception</h3>
+    to{
 
-            <p><strong>Venue:</strong> ZAAD Convention Centre</p>
+        opacity:1;
 
-            <p><strong>Date:</strong> 17 August 2026</p>
+        transform:translateY(0);
 
-            <p><strong>Time:</strong> 11:00 AM</p>
+    }
 
-            <p><strong>Address:</strong> Manalaya, Aliparamba, Anamangad, Kerala 679357</p>
+}
 
-            <a href="https://www.google.com/maps/dir//ZAAD+Convention+Center,+W7P6%2BJC7,+Manalaya,+Aliparamba,+Anamangad,+Kerala+679357/@10.960896,76.2478592,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x3ba7cf003ed7f245:0x731d0da8363f764c!2m2!1d76.2611037!2d10.9365054?entry=ttu&g_ep=EgoyMDI2MDcyMi4wIKXMDSoASAFQAw%3D%3D" target="_blank">
-                <button>Get Directions</button>
-            </a>
+/*==========================
+Wedding Details
+==========================*/
 
-        </div>
+.details{
 
-    </div>
+    background:#f7f4ef;
 
-    <div class="map">
+    color:#222;
 
-        <iframe src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d116544.4336461802!2d76.24419607129077!3d10.966030151095143!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x3ba7cf003ed7f245%3A0x731d0da8363f764c!2sZAAD%20Convention%20Center%2C%20W7P6%2BJC7%2C%20Manalaya%2C%20Aliparamba%2C%20Anamangad%2C%20Kerala%20679357!3m2!1d10.9365054!2d76.26110369999999!5e0!3m2!1sen!2sin!4v1785144876059!5m2!1sen!2sin"
-            width="100%"
-            height="450"
-            style="border:0;"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="strict-origin-when-cross-origin">
-        </iframe>
+    padding:100px 20px;
 
-    </div>
+}
 
-</section>
+.details h2{
 
-<section class="travel">
+    text-align:center;
 
-    <h2>Getting to the Venue</h2>
+    font-size:48px;
 
-    <div class="travel-container">
+    color:#0b3d2e;
 
-        <div class="travel-card">
-            <h3>✈️ By Air</h3>
-            <p>Calicut International Airport</p>
-            <p>Distance: 50 km</p>
-            <p>Approx. 1 Hour 30 Minutes</p>
-        </div>
+    margin-bottom:60px;
 
-        <div class="travel-card">
-            <h3>🚆 By Train</h3>
-            <p>Cherukara Railway Station</p>
-            <p>Distance: 10 km</p>
-            <p>Approx. 20 Minutes</p>
-        </div>
+    font-family:'Cormorant Garamond',serif;
 
-        <div class="travel-card">
-            <h3>🚌 By Bus</h3>
-            <p>KSRTC Bus Stand-Perinthalmanna</p>
-            <p>Distance: 7.2 km</p>
-            <p>Approx. 15 Minutes</p>
-        </div>
+}
 
-        <div class="travel-card">
-            <h3>🚗 Parking</h3>
-            <p>Parking Available</p>
-            <p>Free for Guests</p>
-            <p>Security Available</p>
-        </div>
+.cards{
 
-    </div>
+    display:flex;
 
-</section>
+    justify-content:center;
 
-<section class="explore">
+    align-items:center;
 
-    <h2>Explore While You're Here</h2>
+    width:100%;
 
-    <p class="explore-text">
-        Make the most of your visit by exploring some beautiful places nearby.
-    </p>
+}
+.card{
 
-    <div class="explore-grid">
+    width:100%;
+    max-width:500px;
 
-        <div class="explore-card">
-            <img src="images/Kottakkunnu.jpg" alt="Kottakkunnu">
-            <h3>Kottakkunnu</h3>
-            <p>Relax and enjoy  scenic hilltop park and historical site located in the heart of Malappuram city, Kerala, known for its ruined Zamorin fort, family amusement rides, and panoramic views.</p>
-            <a href="https://share.google/uprwhJAXAqjzI1nJQ"><button>View Location</button></a>
-        </div>
+    margin:auto;
 
-        <div class="explore-card">
-            <img src="images/Kodikuthimala.jpg" alt="Kodikuthimala">
-            <h3> Kodikuthimala</h3>
-            <p>Known as the "Ooty of Malappuram".This Hillstation features a 360 degree watchtower.</p>
-            <a href="https://share.google/Df4GarpxNSD9dU84N"><button>View Location</button></a>
-        </div>
+    background:white;
 
-        <div class="explore-card">
-            <img src="images/Era Nature.jpg" alt="Era Nature">
-            <h3>Era Nature</h3>
-            <p>Scenic Eco-friendly destination and family leisure park.</p>
-            <a href="https://maps.app.goo.gl/b8yEqbGJdsW7Q5Ki6"><button>View Location</button></a>
-        </div>
+    border-radius:20px;
 
-        <div class="explore-card">
-            <img src="images/Paloor Kotta Waterfalls.jpg" alt="Paloor Kotta Waterfalls">
-            <h3>Paloor Kotta Waterfalls</h3>
-            <p>Discover the hidden, two-tiered seasonal waterfall tucked inside the dense forest of Kadungapuram village.</p>
-            <a href="https://maps.app.goo.gl/Nm9U1ZgHFhZP4DX79"><button>View Location</button></a>
-        </div>
+    padding:35px;
 
-    </div>
+    box-shadow:0 10px 30px rgba(0,0,0,.12);
 
-</section>
+    text-align:center;
 
-<section class="gallery">
+    transition:.4s;
 
-    <h2>Our Journey</h2>
+}
+.card:hover{
 
-    <p class="gallery-text">
-        Every picture tells a story. Thank you for being part of ours.
-    </p>
+    transform:translateY(-10px);
 
-    <div class="gallery-grid">
+}
 
-    <img src="images/gallery1.jpg" class="gallery-img img1" alt="Gallery Image">
+.card h3{
 
-    <img src="images/gallery2.jpg" class="gallery-img img2" alt="Gallery Image">
+    color:#0b3d2e;
 
-    <img src="images/gallery3.jpg" class="gallery-img img3" alt="Gallery Image">
+    margin-bottom:25px;
 
-</div>
-</section>
+    font-size:28px;
 
-<footer class="footer">
+}
 
-    <h2>Thank You</h2>
+.card p{
 
-    <p class="footer-message">
-        Your presence, love, and blessings mean the world to us.
-        We look forward to celebrating this special day together,
-        In Sha Allah.
-    </p>
+    margin:8px;
 
-    <div class="dua">
+    font-size:18px;
 
-        <h3>Marriage Dua</h3>
+}
 
-        <p class="arabic">
-            بَارَكَ اللهُ لَكُماَ وَبَارَكَ عَلَيْكُماَ وَجَمَعَ بَيْنَكُمَا فِي خَيْرٍ
-        </p>
+/*============================
+Quran Verse
+=============================*/
 
-        <p>
-            "May Allah bless you, shower His blessings upon you,
-            and unite both of you in goodness."
-        </p>
+.verse{
 
-    </div>
+    background:#0b3d2e;
 
-    <div class="contact">
+    color:white;
 
-        <h3>Contact</h3>
+    text-align:center;
 
-        <p>📞 Groom's Family : +91 9656131390</p>
+    padding:120px 40px;
 
-        <p>📞 Bride's Family : +91 8590366613</p>
+}
 
-        <p>✉️ salmanandsadiya@gmail.com</p>
+.verse h2{
 
-    </div>
+    font-size:70px;
 
-    <br>
+    color:#FFD700;
 
-    <a href="pdf/invitation.png" download>
-        <button>📄 Download Invitation</button>
-    </a>
+    margin-bottom:40px;
 
-    <p class="copyright">
-        © 2026 Salmanul Farisi & Sadiya
-    </p>
+}
 
-</footer>
+.verse h3{
 
-<script src="script.js"></script>
+    font-family:'Amiri',serif;
 
-</body>
-</html>
+    font-size:42px;
 
+    max-width:900px;
 
+    margin:auto;
+
+    line-height:2;
+
+}
+
+.translation{
+
+    max-width:900px;
+
+    margin:50px auto;
+
+    font-size:22px;
+
+    line-height:1.8;
+
+    color:#eeeeee;
+
+}
+
+.reference{
+
+    color:#FFD700;
+
+    font-size:20px;
+
+    letter-spacing:2px;
+
+}
+
+/*==========================
+Countdown
+==========================*/
+
+.countdown{
+
+    background:#f8f5ef;
+
+    text-align:center;
+
+    padding:120px 20px;
+
+}
+
+.countdown h2{
+
+    font-size:48px;
+
+    color:#0b3d2e;
+
+    margin-bottom:60px;
+
+    font-family:'Cinzel',serif;
+
+}
+
+.timer{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:30px;
+
+    flex-wrap:wrap;
+
+}
+
+.box{
+
+    width:150px;
+
+    height:150px;
+
+    background:white;
+
+    border-radius:30px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.box span{
+
+    font-size:52px;
+
+    color:#0b3d2e;
+
+    font-weight:bold;
+
+}
+
+.box p{
+
+    margin-top:10px;
+
+    font-size:18px;
+
+    color:#666;
+
+}
+/*==========================
+Venue
+==========================*/
+
+.venue{
+
+    background:#f8f5ef;
+
+    padding:120px 20px;
+
+}
+
+.venue h2{
+
+    text-align:center;
+
+    font-size:48px;
+
+    color:#0b3d2e;
+
+    margin-bottom:60px;
+
+    font-family:'Cinzel',serif;
+
+}
+
+.venue-container{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    width:100%;
+
+    margin-bottom:60px;
+
+}
+.venue-image{
+
+    width:100%;
+    height:220px;
+
+    object-fit:cover;
+
+    border-radius:15px;
+
+    margin-bottom:20px;
+
+}
+.venue-card{
+
+    width:100%;
+    max-width:600px;
+
+    background:white;
+
+    padding:35px;
+
+    border-radius:20px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+
+    text-align:center;
+
+}
+
+.venue-card h3{
+
+    margin-bottom:20px;
+
+    color:#0b3d2e;
+
+}
+
+.venue-card p{
+
+    margin:12px 0;
+
+}
+
+.venue-card button{
+
+    margin-top:25px;
+
+}
+
+.map{
+
+    width:90%;
+
+    max-width:1000px;
+
+    margin:60px auto;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.2);
+
+
+}
+/*==========================
+Travel
+==========================*/
+
+.travel{
+
+    background:#0b3d2e;
+
+    color:white;
+
+    padding:120px 20px;
+
+}
+
+.travel h2{
+
+    text-align:center;
+
+    font-size:48px;
+
+    margin-bottom:60px;
+
+    font-family:'Cinzel',serif;
+
+}
+
+.travel-container{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:30px;
+
+    flex-wrap:wrap;
+
+}
+
+.travel-card{
+
+    width:280px;
+
+    background:white;
+
+    color:#222;
+
+    padding:30px;
+
+    border-radius:20px;
+
+    text-align:center;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.25);
+
+    transition:.4s;
+
+}
+
+.travel-card:hover{
+
+    transform:translateY(-10px);
+
+}
+
+.travel-card h3{
+
+    color:#0b3d2e;
+
+    margin-bottom:20px;
+
+}
+
+.travel-card p{
+
+    margin:10px 0;
+
+}
+/*==========================
+Explore
+==========================*/
+
+.explore{
+
+    background:#f8f5ef;
+
+    padding:120px 20px;
+
+    text-align:center;
+
+}
+
+.explore h2{
+
+    font-size:48px;
+
+    color:#0b3d2e;
+
+    font-family:'Cinzel',serif;
+
+}
+
+.explore-text{
+
+    margin:20px auto 60px;
+
+    max-width:700px;
+
+    color:#555;
+
+    font-size:18px;
+
+}
+
+.explore-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+    gap:35px;
+
+    max-width:1200px;
+
+    margin:auto;
+
+}
+
+.explore-card{
+
+    background:white;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+
+    transition:.4s;
+
+}
+
+.explore-card:hover{
+
+    transform:translateY(-10px);
+
+}
+
+.explore-card img{
+
+    width:100%;
+
+    height:220px;
+
+    object-fit:cover;
+
+}
+
+.explore-card h3{
+
+    color:#0b3d2e;
+
+    margin:20px 0 10px;
+
+}
+
+.explore-card p{
+
+    padding:0 20px 20px;
+
+    color:#666;
+
+}
+
+.explore-card button{
+
+    margin-bottom:25px;
+
+}
+/*==========================
+Gallery
+==========================*/
+
+.gallery{
+
+    background:#f8f5ef;
+
+    padding:120px 20px;
+
+    text-align:center;
+
+}
+
+.gallery h2{
+
+    color:#0b3d2e;
+
+    font-size:48px;
+
+    font-family:'Cinzel',serif;
+
+}
+
+.gallery-text{
+
+    max-width:700px;
+
+    margin:25px auto 60px;
+
+    color:#666;
+
+}
+
+.gallery-grid{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:flex-start;
+
+    gap:35px;
+
+    max-width:1100px;
+
+    margin:60px auto;
+
+    flex-wrap:wrap;
+
+}
+
+.gallery-img{
+
+    width:300px;
+
+    height:420px;
+
+    object-fit:cover;
+
+    border-radius:25px;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.18);
+
+    transition:.4s;
+
+}
+
+.gallery-img:hover{
+
+    transform:translateY(-10px) scale(1.03);
+
+}
+
+.img2{
+
+    margin-top:100px;
+
+}
+/*==========================
+Footer
+==========================*/
+
+.footer{
+
+    background:#081f18;
+
+    color:white;
+
+    text-align:center;
+
+    padding:100px 20px;
+
+}
+
+.footer h2{
+
+    color:#FFD700;
+
+    font-size:48px;
+
+    font-family:'Cinzel',serif;
+
+    margin-bottom:30px;
+
+}
+
+.footer-message{
+
+    max-width:700px;
+
+    margin:auto;
+
+    line-height:1.8;
+
+    font-size:18px;
+
+}
+
+.dua{
+
+    margin-top:60px;
+
+}
+
+.arabic{
+
+    font-family:'Amiri',serif;
+
+    font-size:36px;
+
+    color:#FFD700;
+
+    margin:25px auto;
+
+    line-height:2;
+
+}
+
+.contact{
+
+    margin-top:60px;
+
+}
+
+.contact p{
+
+    margin:12px;
+
+}
+
+.copyright{
+
+    margin-top:60px;
+
+    color:#cccccc;
+
+    font-size:15px;
+
+}
+
+@media (max-width:768px){
+
+    .hero{
+        padding:60px 25px;
+    }
+
+    .names{
+        letter-spacing:1px;
+    }
+
+    .timer{
+        gap:15px;
+    }
+
+    .box{
+        width:110px;
+        height:110px;
+    }
+
+    .box span{
+        font-size:38px;
+    }
+
+    .details h2,
+    .timeline h2,
+    .venue h2,
+    .travel h2,
+    .explore h2,
+    .food h2,
+    .restaurants h2,
+    .gallery h2,
+    .rsvp h2,
+    .footer h2,
+    .countdown h2{
+        font-size:34px;
+    }
+
+    .map iframe{
+        width:100%;
+        height:300px;
+    }
+
+}
+
+@media (max-width:768px){
+
+    .gallery-grid{
+
+        flex-direction:column;
+
+        align-items:center;
+
+    }
+
+    .img2{
+
+        margin-top:0;
+
+    }
+
+    .gallery-img{
+
+        width:90%;
+
+        max-width:350px;
+
+        height:auto;
+
+    }
+
+}
