@@ -1,4 +1,5 @@
-﻿// Wedding Date
+console.log("Script loaded!");
+// Wedding Date
 const weddingDate = new Date("August 17, 2026 10:30:00").getTime();
 
 const countdown = setInterval(function () {
@@ -30,3 +31,30 @@ const countdown = setInterval(function () {
     }
 
 }, 1000);
+
+// Gold Confetti Rain
+
+const petals = document.getElementById("petals");
+
+function createConfetti(){
+
+    if(!petals) return;
+
+    const confetti = document.createElement("div");
+
+    confetti.className = "confetti";
+
+    confetti.style.left = Math.random() * window.innerWidth + "px";
+
+    confetti.style.animationDuration =
+        (5 + Math.random() * 5) + "s";
+
+    petals.appendChild(confetti);
+
+    setTimeout(()=>{
+        confetti.remove();
+    },10000);
+
+}
+
+setInterval(createConfetti,300);
