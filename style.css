@@ -124,6 +124,17 @@ body{
     line-height:1.8;
 
 }
+.bismillah-translation{
+    font-family: 'Dancing Script', sans-serif;
+    font-size: 18px;
+    color: rgba(255,255,255,0.85);
+    text-align: center;
+    max-width: 600px;
+    margin: 10px auto 25px;
+    line-height: 1.6;
+    
+}
+
 .names{
 
     font-family:'Dancing Script', cursive;
